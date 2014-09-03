@@ -47,7 +47,7 @@ namespace Downloader
             WebClient client = new WebClient();
             client.DownloadFileCompleted += client_DownloadFileCompleted(file);
             client.DownloadProgressChanged += client_DownloadProgressChanged(file);
-            client.DownloadFileAsync(file.DownloadLink.Link, Path.Combine(DownloadPath, file.Filename));
+            client.DownloadFileAsync(file.DownloadLink.Link, Path.Combine(DownloadPath, CreateTempPath(file.Filename)));
         }
 
         public async static void DownloadFilePost(FileDescription file)
